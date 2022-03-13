@@ -20,3 +20,20 @@ class SerialGenerator:
     100
     """
 
+    def __init__(self, start):
+        """sets the start var and next var to start"""
+        self.start = start
+        self.next = start
+
+    def __repr__(self):
+        return f"<SerialGenerator start={self.start} next={self.next}>"
+
+    def generate(self):
+        """returns the previous value + 1"""
+        self.next = self.next + 1
+        return self.next
+
+    def reset(self):
+        """resets the passed value to start """
+        self.next = self.start
+
